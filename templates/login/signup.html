@@ -1,0 +1,65 @@
+{% extends '../base.html' %}
+
+{% block content %}
+
+<h2 class="has-text-centered title">SignUp</h2>
+
+{% for message in messages %}
+    <div class="message is-warning"><span>{{ message }}</span></div>
+{% endfor %}
+
+<div class="columns">
+<div class="column is-half m-auto">
+  <form method="POST" action="">
+    {% csrf_token %}
+    <div class="field">
+      <label class="label">Username</label>
+      <div class="control">
+        <input class="input is-small is-black" type="text" name="username" autofocus>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">First Name</label>
+      <div class="control">
+        <input class="input is-small" type="text" name="firstname">
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Last Name</label>
+      <div class="control">
+        <input class="input is-small" type="text" name="lastname">
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Email</label>
+      <div class="control">
+        <input class="input is-small" type="email" name="email">
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Password</label>
+      <div class="control">
+        <input class="input is-small" type="password" name="password">
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Confirm Password</label>
+      <div class="control">
+        <input class="input is-small" type="password" name="c_password">
+      </div>
+    </div>
+
+    <div class="field">
+      <button type="submit" class="button is-primary">Sign Up</button>
+    </div>
+
+  </form>
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends '../base.html' %}
+
+{% block content %}
+
+    {% for message in messages %}
+      <div class="message is-warning"><span>{{ message }}</span></div>
+    {% endfor %}
+
+    <h3 class="title has-text-centered">Welcome to Login</h3>
+
+    {% if user.is_authenticated %}
+      <h4 class="title has-text-centered">Hello {{ user.username }} </h4>
+
+    {% endif %}
+
+    {% endblock %}
+
+
